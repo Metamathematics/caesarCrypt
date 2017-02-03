@@ -1,9 +1,14 @@
 # To change this license header, choose License Headers in Project Properties.
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
+import sys
 
+fname = sys.argv[1]
+
+with open(fname) as f:
+    content = f.readlines()
+    
 offset = 5
-
 def caesar_encrypt(word):
     cword = list(word)
     for i in range(len(word)):
@@ -33,7 +38,6 @@ def caesar_decrypt(word):
                 intvalue += 26       
         cword[i] = chr(intvalue)
     return ''.join(cword)
-
 
 
 word = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
